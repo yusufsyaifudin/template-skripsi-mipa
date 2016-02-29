@@ -17,9 +17,9 @@ Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL")
 
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                    Version 2, December 2004
+                    Version 1, Feburary 2016
 
- Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+ Copyright (c) 2016 Yusuf Syaifudin <yusuf.syaifudin@gmail.com>
 
  Everyone is permitted to copy and distribute verbatim or modified
  copies of this license document, and changing it is allowed as long
