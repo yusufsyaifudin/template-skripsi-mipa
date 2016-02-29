@@ -1,0 +1,157 @@
+% ------------------------------------------------------------------------------
+% Berisi tambahan package dan konfigurasi untuk masing-masing package.
+% Ada baiknya, setiap konfigurasi diletakkan tepat dibawah 
+% setelah package dilakukan import (usepackage) agar tidak membingungkan.
+% Serta disarankan untuk menambah kegunaan package tersebut agar tidak lupa.
+% ------------------------------------------------------------------------------
+
+
+% font tambahan
+\usepackage{textcomp}
+
+% digunakan untuk membuat flowchart
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows, fit, positioning}
+
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{pbox}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+
+% Untuk hyperlink dan otomatis membuat bookmark
+\usepackage{hyperref}
+
+% break tanda /, - dan spasi ke baris baru jika sudah tidak muat
+\def\UrlBreaks{\do\/\do-\do\ }
+
+% font url dibuat miring dan dg jenis font ttfamily
+\renewcommand{\UrlFont}{\small\ttfamily\itshape}
+
+\usepackage{csquotes}
+\usepackage{framed}
+\usepackage{enumitem}
+
+% untuk input kode baik dari file atau bukan
+\usepackage{listings} 
+
+% ----------------------------------------------------------------------------
+% Contoh dari file
+% ----------------------------------------------------------------------------
+% \begin{figure}[H]
+%   \lstinputlisting[language=python, firstline=38, lastline=59]{code/linkwalker.py}
+%   \caption{Mendapatkan daftar tautan berita pada kompas.com}
+%   \label{grab daftar berita kompas}
+% \end{figure}
+% ----------------------------------------------------------------------------
+% 
+% ----------------------------------------------------------------------------
+% Contoh
+% ----------------------------------------------------------------------------
+% \begin{figure}
+% 	\begin{lstlisting}[language=sql]
+% 		update train_data_statement set data = replace(data, '“', '"');
+% 		update train_data_statement set data = replace(data, '”', '"');
+		
+% 		update test_data_statement set data = replace(data, '“', '"');
+% 		update test_data_statement set data = replace(data, '”', '"');
+% 	\end{lstlisting}
+% 	\caption{\textit{Query} SQL untuk melakukan perubahan karakter pada data}
+% 	\label{kueri SQL untuk melakukan perubahan karakter pada data}
+% \end{figure} 
+% ------------------------------------------------------------------------------
+
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{courier}
+\usepackage[scaled=.75]{beramono}
+
+%-----------------------------------------------------------------
+% Setting syntax hightlighting
+%-----------------------------------------------------------------
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=2mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle  = \fontfamily{pcr}\fontsize{8pt}{8pt}\selectfont,
+  numbersep=8pt,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+
+
+
+% Untuk membuat multi kolom
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+
+% Konfigurasi multi kolom
+% bikin multi kolom
+\newcounter{countitems}
+\newcounter{nextitemizecount}
+\newcommand{\setupcountitems}{%
+  \stepcounter{nextitemizecount}%
+  \setcounter{countitems}{0}%
+  \preto\item{\stepcounter{countitems}}%
+}
+\makeatletter
+\newcommand{\computecountitems}{%
+  \edef\@currentlabel{\number\c@countitems}%
+  \label{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\newcommand{\nextitemizecount}{%
+  \getrefnumber{countitems@\number\c@nextitemizecount}%
+}
+\newcommand{\previtemizecount}{%
+  \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
+}
+\makeatother    
+\newenvironment{AutoMultiColItemize}{%
+\ifnumcomp{\nextitemizecount}{>}{2}{\begin{multicols}{2}}{}%
+\setupcountitems\begin{itemize}}%
+{\end{itemize}%
+\unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{2}{\end{multicols}}{}}
+%end bikin multi kolom
+
+% ------------------------------------------------------------------------------
+% Contoh sintaks:
+% ------------------------------------------------------------------------------
+% \begin{itemize}
+%   \item \textit{Reporting verb} yang hadir sebelum entitas pada kutipan langsung:
+%   \begin{AutoMultiColItemize}
+% 	  \item tutur
+% 	  \item kata
+% 	  \item ujar
+%   \end{AutoMultiColItemize}
+
+%   \item \textit{Reporting verb} yang hadir setelah entitas pada kutipan langsung:
+%   \begin{AutoMultiColItemize}
+% 	  \item mengatakan
+% 	  \item menjawab
+%   \end{AutoMultiColItemize}
+% \end{itemize}
+% ------------------------------------------------------------------------------
+
+
+% Setting list agar spasi antar list tidak terlalu banyak
+\setlist{  
+  listparindent=\parindent,
+  parsep=0pt
+}
+
+% Agar tetap Justify tapi kata tidak dipisah sesuka hati (not hypenation but justified)
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\hyphenchar\font=-1
+\sloppy
