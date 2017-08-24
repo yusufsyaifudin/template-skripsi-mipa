@@ -9,8 +9,11 @@ Saya menggunakan beberapa package berikut:
 * Untuk kompilasi agar tidak perlu terminal, saya pakai TexMaker download di sini [http://www.xm1math.net/texmaker/download.html](http://www.xm1math.net/texmaker/download.html). TexMaker ini memiliki kelebihan akan mengunduh package yang dibutuhkan secara otomatis.
 
 ## Memulai penulisan
-Silahkan clone repo ini `git clone https://github.com/yusufsyaifudin/template-skripsi-mipa.git` kemudian silahkan edit tulisan untuk setiap bab.
-Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
+1. Silahkan download atau clone repo ini `git clone https://github.com/yusufsyaifudin/template-skripsi-mipa.git`
+2. Isi data awal di `CONFIG.tex`
+3. Untuk pengaturan format proposal atau tugas akhir, ubah pada bagian`\ExecuteOptions` pada file `ugmskripsi.cls`. Gunakan parameter pertama "proposal" untuk format penulisan proposal, dan "laporan" untuk penulisan Skripsi ataupun Tesis
+3. Silahkan edit tulisan untuk setiap bab.
+4. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
 
 ## LICENSE
 
