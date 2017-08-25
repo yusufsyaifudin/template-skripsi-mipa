@@ -246,7 +246,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -290,7 +290,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -324,7 +324,7 @@
     \vspace{1.0cm}
     Diusulkan oleh\\
     \vspace{0.5cm}
-    \@fullname\\
+    \MakeUppercase{\@fullname}\\
     \@idnum\\
     \vspace{1.0cm}
     Telah disetujui\\
@@ -358,7 +358,7 @@
     \vspace{1.0cm}
     Telah dipersiapkan dan disusun oleh\\
     \vspace{0.5cm}
-    \@fullname\\
+    \MakeUppercase{\@fullname}\\
     \@idnum\\
     \vspace{1.0cm}
     Telah dipertahankan di depan Tim Penguji\\
@@ -391,7 +391,7 @@
     \vspace{1.5cm}
     \begin{tabular}{p{3cm}p{0.1cm}p{10cm}}
       Judul Tesis & : &\@titleind \\
-      Nama Mahasiswa & : &\@fullname \\ 
+      Nama Mahasiswa & : &\MakeUppercase{\@fullname} \\ 
       NIM & : & \@idnum
     \end{tabular}
     \end{center}
