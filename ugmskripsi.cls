@@ -197,8 +197,6 @@
     Januari\or Februari\or Maret\or April\or Mei\or Juni\or
     Juli\or Agustus\or September\or Oktober\or November\or Desember\fi
     \space \number\year}
-\newcommand{\degree}[1]{\gdef\@degree{#1}}
-\newcommand{\@degree}{}
 \newcommand{\yearsubmit}[1]{\gdef\@yearsubmit{#1}}
 \newcommand{\@yearsubmit}{}
 \newcommand{\program}[1]{\gdef\@program{#1}}
