@@ -8,10 +8,12 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{times}
 \RequirePackage{graphicx,latexsym}
+\RequirePackage{pdftexcmds}
+\RequirePackage{array}
 
 \newif\if@msthesis
 \newif\if@msproposal
-\DeclareOption{skripsi}{\@msthesistrue\@msproposalfalse}
+\DeclareOption{laporan}{\@msthesistrue\@msproposalfalse}
 \DeclareOption{proposal}{\@msthesisfalse\@msproposaltrue}
 
 \newif\if@singlesp
@@ -28,7 +30,7 @@
 \DeclareOption{inggris}{\@langindofalse\@langengtrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-\ExecuteOptions{skripsi,satusetengahspasi,indonesia}
+\ExecuteOptions{proposal,satusetengahspasi,indonesia}
 \ProcessOptions
 \LoadClass[a4paper,12pt]{report}
 \RequirePackage{natbib}
@@ -209,10 +211,18 @@
 \newcommand{\@dept}{}
 \newcommand{\firstsupervisor}[1]{\gdef\@firstsupervisor{#1}}
 \newcommand{\@firstsupervisor}{}
+\newcommand{\nipfirstsupervisor}[1]{\gdef\@nipfirstsupervisor{#1}}
+\newcommand{\@nipfirstsupervisor}{}
 \newcommand{\firstexaminer}[1]{\gdef\@firstexaminer{#1}}%
 \newcommand{\@firstexaminer}{}
 \newcommand{\secondexaminer}[1]{\gdef\@secondexaminer{#1}}%
 \newcommand{\@secondexaminer}{}
+\newcommand{\thirdexaminer}[1]{\gdef\@thirdexaminer{#1}}%
+\newcommand{\@thirdexaminer}{}
+\newcommand{\reporttype}[1]{\gdef\@reporttype{#1}}%
+\newcommand{\@reporttype}{}
+\newcommand{\shortdegree}[1]{\gdef\@shortdegree{#1}}%
+\newcommand{\@shortdegree}{}
 
 %------------------------------------------------------------
 %Define cover in Indonesian
@@ -223,7 +233,11 @@
   \setcounter{page}{1}
     \begin{center}
       \begin{singlespace}
-      \MakeUppercase{\normalfont\bfseries Skripsi}\\
+      \if@msthesis%
+        {\MakeUppercase{\normalfont\bfseries\@reporttype}}\\
+      \else
+        {\MakeUppercase{\normalfont\bfseries{usulan penelitian \@shortdegree}}}\\
+      \fi
       \vspace{1.5cm}	
       \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
       \vspace{1.0cm}
@@ -237,7 +251,7 @@
        \vspace{1.5cm}
        {\normalfont 
          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-         \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
+         \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
          \MakeUppercase{\normalfont\bfseries\@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@university}\\
          \MakeUppercase{\normalfont\bfseries\@city}\\
@@ -256,7 +270,11 @@
   \setcounter{page}{1}
     \begin{center}
       \begin{singlespace}
-      \MakeUppercase{\normalfont\bfseries Skripsi}\\
+      \if@msthesis%
+        {\MakeUppercase{\normalfont\bfseries\@reporttype}}\\
+      \else
+        {\MakeUppercase{\normalfont\bfseries{usulan penelitian \@shortdegree}}}\\
+      \fi
       \vspace{1.5cm}	
       \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
       \vspace{1.0cm}
@@ -277,7 +295,7 @@
        \vspace{1.5cm}
        {\normalfont 
          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-         \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
+         \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
          \MakeUppercase{\normalfont\bfseries\@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@university}\\
          \MakeUppercase{\normalfont\bfseries\@city}\\
@@ -289,45 +307,126 @@
 }  
 
 %------------------------------------------------------------
-%Approval Page
+%Approval Proposal Page
+%------------------------------------------------------------
+\if@msproposal%
+  \def\approvalproposalpage{%
+    \newpage\thispagestyle{empty}%
+    \begin{center}
+    \begin{singlespace}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Halaman Persetujuan}
+    \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Persetujuan}}\\
+    \vspace{1.0cm}
+    \MakeUppercase{\normalfont\large\bfseries\expandafter{Usulan Penelitian \@shortdegree}}\\
+    \vspace{0.5cm}
+        \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
+    \vspace{1.0cm}
+    Diusulkan oleh\\
+    \vspace{0.5cm}
+    \@fullname\\
+    \@idnum\\
+    \vspace{1.0cm}
+    Telah disetujui\\
+    pada tanggal \expandafter{\@examdate}\\
+    \vspace{1.0cm}
+    Pembimbing\\
+
+    \vspace{4.0cm}
+    \underline\@firstsupervisor\\
+    NIP. \@nipfirstsupervisor
+    \end{singlespace}
+    \end{center}
+  }
+\fi
+
+%------------------------------------------------------------
+%Approval Undergraduate Page
 %------------------------------------------------------------
 \def\approvalpage{%
   \newpage\thispagestyle{empty}%
-  \begin{center}
-  \begin{singlespace}
-  \phantomsection
-  \addcontentsline{toc}{chapter}{Halaman Pengesahan}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Pengesahan}}\\
-  \vspace{1.0cm}
-  \MakeUppercase{\normalfont\large\bfseries\expandafter{Skripsi}}\\
-  \vspace{0.5cm}
-      \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
-  \vspace{1.0cm}
-Telah dipersiapkan dan disusun oleh\\
-\vspace{0.5cm}
-\@fullname\\
-\@idnum\\
-\vspace{1.0cm}
-Telah dipertahankan di depan Tim Penguji\\
-pada tanggal \expandafter{\@examdate}\\
-\vspace{0.5cm}
-Susunan Tim Penguji\\
+  \ifnum \pdf@strcmp{\@reporttype}{Skripsi}=0  
+    \begin{center}
+    \begin{singlespace}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Halaman Pengesahan}
+    \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Pengesahan}}\\
+    \vspace{1.0cm}
+    \MakeUppercase{\normalfont\large\bfseries\expandafter{\@reporttype}}\\
+    \vspace{0.5cm}
+    \MakeUppercase{\normalfont\bfseries\@titleind}\par\nobreak
+    \vspace{1.0cm}
+    Telah dipersiapkan dan disusun oleh\\
+    \vspace{0.5cm}
+    \@fullname\\
+    \@idnum\\
+    \vspace{1.0cm}
+    Telah dipertahankan di depan Tim Penguji\\
+    pada tanggal \expandafter{\@examdate}\\
+    \vspace{0.5cm}
+    Susunan Tim Penguji\\
 
-\vspace{4.0cm}
-\begin{tabular}{p{7cm}p{7cm}}
-\@firstsupervisor&\@firstexaminer\\
-Pembimbing & Ketua Penguji
-\end{tabular}
+    \vspace{4.0cm}
+    \begin{tabular}{p{7cm}p{7cm}}
+    \@firstsupervisor&\@firstexaminer\\
+    Pembimbing & Ketua Penguji
+    \end{tabular}
 
-\bigskip
-\vspace{3.0cm}
-\begin{tabular}{p{7cm}p{7cm}}
-&\@secondexaminer\\
-&Anggota Penguji
-\end{tabular}
+    \bigskip
+    \vspace{3.0cm}
+    \begin{tabular}{p{7cm}p{7cm}}
+    &\@secondexaminer\\
+    &Anggota Penguji
+    \end{tabular}
+
     \end{singlespace}
     \end{center}
+  \else
+    \begin{singlespace}
+    \begin{center}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Lembar Pengesahan Proposal Tesis}
+    \MakeUppercase{\normalfont\large\bfseries\expandafter{Lembar Pengesahan Proposal Tesis}}\\
+
+    \vspace{1.5cm}
+    \begin{tabular}{p{3cm}p{0.1cm}p{10cm}}
+      Judul Tesis & : &\@titleind \\
+      Nama Mahasiswa & : &\@fullname \\ 
+      NIM & : & \@idnum
+    \end{tabular}
+    \end{center}
+
+    \vspace{1.0cm}
+    \noindent
+    Proposal telah diuji pada tanggal \@examdate, dan sudah diperbaiki sesuai saran para penguji, serta sudah disetujui oleh para penguji.
+
+    \begin{center}
+    \begin{tabular}{p{0.5cm}p{10cm}p{3.5cm}}
+      No. & Nama Penguji & Tanda Tangan \\[0.4cm]
+      1 & \@firstexaminer & 1. \\[1.0cm]
+      2 & \@secondexaminer & 2. \\[1.0cm]
+      3 & \@thirdexaminer & 3. \\[1.0cm]
+    \end{tabular}
+    
+    \vspace{1.0cm}
+    \begin{tabular}{p{9cm}p{5cm}}
+      \multicolumn{2}{l}{Mengetahui,}\\
+      Pembimbing & Pengusul \\[2.0cm]
+      \underline{\@firstsupervisor} & \underline{\@fullname} \\
+      NIP. \@nipfirstsupervisor & NIM. \@idnum
+    \end{tabular}
+    \end{center}
+    \end{singlespace}
+  \fi
 }
+
+%------------------------------------------------------------
+%Approval Graduate Page
+%------------------------------------------------------------
+% \def\approvalpage{%
+%   \newpage\thispagestyle{empty}%
+
+% }
 
 %------------------------------------------------------------
 %Declare Page
@@ -342,8 +441,8 @@ Pembimbing & Ketua Penguji
   \end{center}
   \vspace{1.0cm}
     \noindent
-Dengan ini saya menyatakan bahwa dalam Skripsi ini tidak terdapat karya yang
-pernah diajukan untuk memperoleh gelar kesarjanaan di suatu Perguruan Tinggi, 
+Dengan ini saya menyatakan bahwa dalam \@reporttype \space ini tidak terdapat karya yang
+pernah diajukan untuk memperoleh gelar akademik di suatu Perguruan Tinggi, 
 dan sepanjang pengetahuan saya juga tidak terdapat karya atau pendapat yang
 ditulis atau diterbitkan oleh orang lain, kecuali yang secara tertulis diacu
 dalam naskah ini dan disebutkan dalam daftar pustaka.
