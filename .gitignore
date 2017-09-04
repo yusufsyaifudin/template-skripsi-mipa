@@ -1,8 +1,8 @@
-LAPORAN_SKRIPSI.aux
-LAPORAN_SKRIPSI.glo
-LAPORAN_SKRIPSI.lof
-LAPORAN_SKRIPSI.log
-LAPORAN_SKRIPSI.lot
-LAPORAN_SKRIPSI.out
-LAPORAN_SKRIPSI.synctex.gz
-LAPORAN_SKRIPSI.toc
+*.aux
+*.glo
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
