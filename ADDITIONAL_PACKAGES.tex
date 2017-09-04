@@ -157,3 +157,14 @@
 \hbadness=10000
 \hyphenchar\font=-1
 \sloppy
+
+% Agar referensi di paragraf auto menggunakan kata "Gambar" atau "Tabel"
+% Contoh: Pada Gambar 3.2 di atas tampak ...
+\makeatletter
+\renewcommand*{\p@figure}{Gambar~}
+\renewcommand*{\p@table}{Tabel~}
+\makeatother
+
+% Memudahkan pewarnaan pada cell tabel
+\usepackage{xcolor}
+\usepackage{colortbl}
