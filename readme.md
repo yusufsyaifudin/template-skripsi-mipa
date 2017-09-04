@@ -1,6 +1,6 @@
 # Template Skripsi MIPA
 
-Dengan pengubahan dari [http://mipa.ugm.ac.id/web/content/panduan-penulisan-dan-template-tugas-akhir](http://mipa.ugm.ac.id/web/content/panduan-penulisan-dan-template-tugas-akhir)
+Dengan pengubahan dari [https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf](https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf)
 
 ## Sebelum instalasi
 Saya menggunakan beberapa package berikut:
@@ -13,7 +13,7 @@ Saya menggunakan beberapa package berikut:
 2. Isi data awal di `CONFIG.tex`
 3. Untuk pengaturan format proposal atau tugas akhir, ubah pada bagian`\ExecuteOptions` pada file `ugmskripsi.cls`. Gunakan parameter pertama "proposal" untuk format penulisan proposal, dan "laporan" untuk penulisan Skripsi ataupun Tesis
 3. Silahkan edit tulisan untuk setiap bab.
-4. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
+4. Setelah itu, buka file `MAIN.tex` di TexMaker lalu coba compile. Akan ada file `MAIN.pdf`.
 
 ## LICENSE
 
