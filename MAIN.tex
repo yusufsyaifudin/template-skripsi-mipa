@@ -27,7 +27,14 @@
 \titlepageind 
 
 % Halaman Persetujuan
+\ifdefined\approvalproposalpage
+\approvalproposalpage
+\fi
+
+% Halaman Pengesahan
+\ifdefined\approvalpage
 \approvalpage
+\fi
 
 % Halaman Pernyataan
 \declarepage
