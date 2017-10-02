@@ -1,6 +1,6 @@
 # Template Skripsi MIPA
 
-Dengan pengubahan dari [http://mipa.ugm.ac.id/web/content/panduan-penulisan-dan-template-tugas-akhir](http://mipa.ugm.ac.id/web/content/panduan-penulisan-dan-template-tugas-akhir)
+Dengan pengubahan dari [https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf](https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf)
 
 ## Sebelum instalasi
 Saya menggunakan beberapa package berikut:
