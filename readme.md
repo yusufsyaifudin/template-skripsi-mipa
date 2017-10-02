@@ -11,7 +11,7 @@ Saya menggunakan beberapa package berikut:
 ## Memulai penulisan
 1. Silahkan download atau clone repo ini `git clone https://github.com/yusufsyaifudin/template-skripsi-mipa.git`
 2. Isi data awal di `CONFIG.tex`
-3. Untuk pengaturan format proposal atau tugas akhir, ubah pada bagian`\ExecuteOptions` pada file `ugmskripsi.cls`. Gunakan parameter pertama "proposal" untuk format penulisan proposal, dan "laporan" untuk penulisan Skripsi ataupun Tesis
+3. Untuk pengaturan format proposal atau tugas akhir, ubah pada bagian`\ExecuteOptions` pada file `ugmskripsi.cls`. Gunakan parameter pertama "proposal" untuk format penulisan proposal, dan "skripsi" untuk penulisan Skripsi.
 3. Silahkan edit tulisan untuk setiap bab.
 4. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
 
