@@ -232,7 +232,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -272,7 +272,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -305,7 +305,7 @@
   \vspace{1.0cm}
 Telah dipersiapkan dan disusun oleh\\
 \vspace{0.5cm}
-\@fullname\\
+\MakeUppercase{\@fullname}\\
 \@idnum\\
 \vspace{1.0cm}
 Telah dipertahankan di depan Tim Penguji\\
