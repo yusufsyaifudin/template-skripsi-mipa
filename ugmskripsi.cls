@@ -232,12 +232,12 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-         \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
+         \MakeUppercase{\normalfont\bfseries Departemen \@dept}\\
          \MakeUppercase{\normalfont\bfseries\@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@university}\\
          \MakeUppercase{\normalfont\bfseries\@city}\\
@@ -272,12 +272,12 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
          \MakeUppercase{\normalfont\bfseries Program Studi \@program}\\
-         \MakeUppercase{\normalfont\bfseries Jurusan \@dept}\\
+         \MakeUppercase{\normalfont\bfseries Depertemen \@dept}\\
          \MakeUppercase{\normalfont\bfseries\@faculty}\\
          \MakeUppercase{\normalfont\bfseries\@university}\\
          \MakeUppercase{\normalfont\bfseries\@city}\\
@@ -305,7 +305,7 @@
   \vspace{1.0cm}
 Telah dipersiapkan dan disusun oleh\\
 \vspace{0.5cm}
-\@fullname\\
+\MakeUppercase{\@fullname}\\
 \@idnum\\
 \vspace{1.0cm}
 Telah dipertahankan di depan Tim Penguji\\
