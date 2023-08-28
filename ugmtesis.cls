@@ -32,7 +32,7 @@
 \ProcessOptions
 \LoadClass[a4paper,12pt]{report}
 \RequirePackage{natbib}
-\bibliographystyle{plainnat}
+\bibliographystyle{natbib}
 \RequirePackage{nomencl}%
 \renewcommand{\nomname}{\nomenclaturename}%
 \makeglossary%
@@ -234,7 +234,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -266,7 +266,7 @@
       \vspace{1.5cm}
        \if@msthesis%
         {\normalfont Diajukan untuk memenuhi salah satu syarat memperoleh derajat\\
-         Master of Science \@program{}}\\
+        \@degree{}}\\
        \else
         {\normalfont Usulan Penelitian}\\
        \fi
@@ -274,7 +274,7 @@
        \includegraphics{logougm}
        \vfill
        {\normalfont
-        \@fullname\\
+        \MakeUppercase{\@fullname}\\
         \@idnum}\\
        \vspace{1.5cm}
        {\normalfont 
@@ -297,6 +297,8 @@
   \newpage\thispagestyle{empty}%
   \begin{center}
   \begin{singlespace}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Halaman Pengesahan}
   \MakeUppercase{\normalfont\large\bfseries\expandafter{Halaman Pengesahan}}\\
   \vspace{1.0cm}
   \MakeUppercase{\normalfont\large\bfseries\expandafter{Tesis}}\\
@@ -305,7 +307,7 @@
   \vspace{1.0cm}
 Telah dipersiapkan dan disusun oleh\\
 \vspace{0.5cm}
-\@fullname\\
+\MakeUppercase{\@fullname}\\
 \@idnum\\
 \vspace{1.0cm}
 Telah dipertahankan di depan Tim Penguji\\
@@ -348,6 +350,8 @@ Pengelola Program Studi Magister \@program
 \def\declarepage{%
   \newpage\thispagestyle{chapterheading}%
   \begin{center}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Halaman Pernyataan}
   {\normalfont\large\bfseries\expandafter{PERNYATAAN}}
   \par\nobreak
   \end{center}
@@ -376,6 +380,7 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
 \def\acknowledment{%
   \clearpage\thispagestyle{chapterheading}%
 \null\vfill%Force the content of acknowledment to bottom page 
+\phantomsection
 \addcontentsline{toc}{chapter}{Halaman Persembahan}
 }
 
@@ -385,6 +390,7 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
 \def\motto{%
   \clearpage\thispagestyle{chapterheading}%
 \null\vfill%Force the content of acknowledment to bottom page 
+\phantomsection
 \addcontentsline{toc}{chapter}{Halaman Motto}
 }
 
@@ -409,7 +415,10 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
 %Redefine Abstract in Indonesian
 %------------------------------------------------------------
 \def\abstractind{%
-  \clearpage\thispagestyle{chapterheading}%
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\abstractname}
+  \thispagestyle{chapterheading}%
   {\parindent \z@ \centering \normalfont
   {\large\textbf{\abstractname}} \\
   \vspace{1.0cm}
@@ -426,7 +435,6 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
     }
   \begin{singlespace}%
   \vskip 20\p@
-  \addcontentsline{toc}{chapter}{\abstractname}
 }
 \def\endabstractind{\par\vfil\null\end{singlespace}}
 
@@ -434,7 +442,11 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
 %Redefine Abstract in English
 %------------------------------------------------------------
 \def\abstracteng{%
-  \clearpage\thispagestyle{chapterheading}\selectlanguage{english}%
+  \clearpage
+  \selectlanguage{english}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\abstractname}
+  \thispagestyle{chapterheading}%
   {\parindent \z@ \centering \normalfont
   {\large\textbf{\abstractname}}\\
   \vspace{1.0cm}
@@ -451,7 +463,6 @@ dalam naskah ini dan disebutkan dalam daftar pustaka.
     }  
   \begin{singlespace}%
   \vskip 20\p@
-  \addcontentsline{toc}{chapter}{\abstractname}
   }
 \def\endabstracteng{\par\vfil\null\end{singlespace}%
 \selectlanguage{bahasa}\clearpage\pagenumbering{arabic}\setcounter{page}{1}}
