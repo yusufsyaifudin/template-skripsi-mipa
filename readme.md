@@ -15,6 +15,20 @@ Saya menggunakan beberapa package berikut:
 3. Silahkan edit tulisan untuk setiap bab.
 4. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
 
+## Menggunakan Docker
+
+```
+docker build --platform linux/amd64 -t yusufs/fmipa-thesis .
+docker run --platform linux/amd64 --rm --volume "$(pwd):/data" yusufs/fmipa-thesis LAPORAN_SKRIPSI.tex
+docker run --platform linux/amd64 --rm --volume "$(pwd):/data" yusufs/fmipa-thesis LAPORAN_TESIS.tex
+```
+
+OR
+
+```
+docker run --platform linux/amd64 --rm --volume "$(pwd):/data" --user $(id -u):$(id -g) yusufs/fmipa-thesis LAPORAN_SKRIPSI.tex
+```
+
 ## LICENSE
 
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL")
