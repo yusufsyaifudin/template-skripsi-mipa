@@ -158,3 +158,12 @@
 \hbadness=10000
 \hyphenchar\font=-1
 \sloppy
+
+% Agar support longtable
+% https://tex.stackexchange.com/questions/639452/create-long-table-in-latex
+% need: varwidth, ninecolors
+%%%% begin of required preamble
+\usepackage{tabularray}
+\UseTblrLibrary{varwidth}
+\DefTblrTemplate{contfoot-text}{default}{Bersambung di halaman selanjutnya}
+\DefTblrTemplate{conthead-text}{default}{(Lanjutan)}

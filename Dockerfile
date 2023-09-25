@@ -65,4 +65,11 @@ RUN tlmgr install collection-fontsrecommended
 # For bibliography
 RUN tlmgr install natbib
 
+# For longtable support https://tex.stackexchange.com/questions/639452/create-long-table-in-latex
+# https://github.com/lvjr/tabularray
+# need ninecolors
+RUN tlmgr install tabularray
+RUN tlmgr install varwidth
+RUN tlmgr install ninecolors
+
 ENTRYPOINT ["pdflatex"]
