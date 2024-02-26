@@ -29,6 +29,8 @@ OR
 docker run --platform linux/amd64 --rm --volume "$(pwd):/data" --user $(id -u):$(id -g) yusufs/fmipa-thesis LAPORAN_SKRIPSI.tex
 ```
 
+Jika menggunakan Visual Studio Code, kamu bisa menggunakan command `F5` atau `fn + F5` atau `Command + Shift + B`.
+
 ## LICENSE
 
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png "WTFPL")
