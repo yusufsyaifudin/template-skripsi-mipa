@@ -34,7 +34,7 @@ ATAU
 gunakan Docker Image yang sudah ada:
 
 ```
-docker run --platform linux/amd64 --rm --volume "$(pwd):/data" ghcr.io/yusufsyaifudin/template-skripsi-mipa:main LAPORAN_SKRIPSI.tex
+docker run --platform linux/amd64 --rm --volume "$(pwd):/data" ghcr.io/yusufsyaifudin/template-skripsi-mipa:master LAPORAN_SKRIPSI.tex
 ```
 
 

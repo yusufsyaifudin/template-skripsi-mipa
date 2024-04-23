@@ -3,7 +3,7 @@ name: Docker Image Build
 on:
   push:
     tags:  [ "v*" ]
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 # https://github.com/docker/docs/blob/ad5049e4c5883be4a73e341f563c093a2a560008/content/build/ci/github-actions/manage-tags-labels.md
 jobs:
