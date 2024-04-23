@@ -23,11 +23,20 @@ docker run --platform linux/amd64 --rm --volume "$(pwd):/data" yusufs/fmipa-thes
 docker run --platform linux/amd64 --rm --volume "$(pwd):/data" yusufs/fmipa-thesis LAPORAN_TESIS.tex
 ```
 
-OR
+ATAU
 
 ```
 docker run --platform linux/amd64 --rm --volume "$(pwd):/data" --user $(id -u):$(id -g) yusufs/fmipa-thesis LAPORAN_SKRIPSI.tex
 ```
+
+ATAU
+
+gunakan Docker Image yang sudah ada:
+
+```
+docker run --platform linux/amd64 --rm --volume "$(pwd):/data" ghcr.io/yusufsyaifudin/fmipa-thesis:main LAPORAN_SKRIPSI.tex
+```
+
 
 Jika menggunakan Visual Studio Code, kamu bisa menggunakan command `F5` atau `fn + F5` atau `Command + Shift + B`.
 
