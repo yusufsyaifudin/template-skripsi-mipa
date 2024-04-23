@@ -18,8 +18,8 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            yusufs/scraping-twitter
-            ghcr.io/yusufsyaifudin/scraping-twitter
+            yusufs/fmipa-thesis
+            ghcr.io/yusufsyaifudin/template-skripsi-mipa
           # generate Docker tags based on the following events/attributes
           tags: |
             type=ref,event=branch
