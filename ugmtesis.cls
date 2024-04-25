@@ -334,7 +334,7 @@ Ko-promotor&Penguji
 
 \vspace{0.5cm}
 Tesis ini telah diterima sebagai salah satu persyaratan\\
-Untuk memperoleh gelar Master of Science Fisika\\
+Untuk memperoleh gelar \@degree\\
 Tanggal \expandafter{\@examdate}\\
 \vspace{1.5cm}
 \@headprogram\\
