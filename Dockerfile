@@ -71,5 +71,6 @@ RUN tlmgr install natbib
 RUN tlmgr install tabularray
 RUN tlmgr install varwidth
 RUN tlmgr install ninecolors
+RUN tlmgr install tablefootnote
 
 ENTRYPOINT ["pdflatex"]
