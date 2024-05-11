@@ -71,6 +71,7 @@ RUN tlmgr install natbib
 RUN tlmgr install tabularray
 RUN tlmgr install varwidth
 RUN tlmgr install ninecolors
+RUN tlmgr install footnote
 RUN tlmgr install tablefootnote
 RUN tlmgr install xifthen
 
