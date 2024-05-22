@@ -77,4 +77,7 @@ RUN tlmgr install xifthen
 # footnote: https://ctan.org/pkg/footnote
 RUN tlmgr install mdwtools
 
+# equation
+RUN tlmgr install amsmath
+
 ENTRYPOINT ["pdflatex"]
