@@ -5,13 +5,15 @@
 % Serta disarankan untuk menambah kegunaan package tersebut agar tidak lupa.
 % ------------------------------------------------------------------------------
 
-
 % font tambahan
 \usepackage{textcomp}
 
 % digunakan untuk membuat flowchart
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows, fit, positioning}
+\usetikzlibrary{shapes, shapes.misc, arrows, fit, positioning}
+\tikzstyle{block} = [rectangle, draw, fill=gray!20, text width=4cm, text centered, rounded corners, minimum height=3em]
+\tikzstyle{io} = [trapezium, draw, fill=gray!20, text width=1cm, text centered, rounded corners, minimum height=3em]
+\tikzstyle{decision} = [diamond, draw, fill=gray!20, text width=3cm, text centered, minimum height=3em]
 
 \usepackage{float}
 \usepackage{booktabs}
@@ -34,7 +36,7 @@
 \usepackage{enumitem}
 
 % untuk input kode baik dari file atau bukan
-\usepackage{listings} 
+\usepackage{listings}
 
 % ----------------------------------------------------------------------------
 % Contoh dari file
@@ -45,7 +47,7 @@
 %   \label{grab daftar berita kompas}
 % \end{figure}
 % ----------------------------------------------------------------------------
-% 
+%
 % ----------------------------------------------------------------------------
 % Contoh
 % ----------------------------------------------------------------------------
@@ -53,13 +55,13 @@
 % 	\begin{lstlisting}[language=sql]
 % 		update train_data_statement set data = replace(data, '“', '"');
 % 		update train_data_statement set data = replace(data, '”', '"');
-		
+
 % 		update test_data_statement set data = replace(data, '“', '"');
 % 		update test_data_statement set data = replace(data, '”', '"');
 % 	\end{lstlisting}
 % 	\caption{\textit{Query} SQL untuk melakukan perubahan karakter pada data}
 % 	\label{kueri SQL untuk melakukan perubahan karakter pada data}
-% \end{figure} 
+% \end{figure}
 % ------------------------------------------------------------------------------
 
 \usepackage{color}
@@ -117,7 +119,7 @@
 \newcommand{\previtemizecount}{%
   \getrefnumber{countitems@\number\numexpr\value{nextitemizecount}-1\relax}%
 }
-\makeatother    
+\makeatother
 \newenvironment{AutoMultiColItemize}{%
 \ifnumcomp{\nextitemizecount}{>}{2}{\begin{multicols}{2}}{}%
 \setupcountitems\begin{itemize}}%
@@ -146,9 +148,9 @@
 
 
 % Setting list agar spasi antar list tidak terlalu banyak
-\setlist{  
-  listparindent=\parindent,
-  parsep=0pt
+\setlist{
+listparindent=\parindent,
+parsep=0pt
 }
 
 % Agar tetap Justify tapi kata tidak dipisah sesuka hati (not hypenation but justified)
@@ -167,3 +169,14 @@
 \UseTblrLibrary{varwidth}
 \DefTblrTemplate{contfoot-text}{default}{Bersambung di halaman selanjutnya}
 \DefTblrTemplate{conthead-text}{default}{(Lanjutan)}
+
+% https://stackoverflow.com/a/16804893
+% \usepackage{tablefootnote}
+% \usepackage{footnote}
+% \makesavenoteenv{tabular}
+% \makesavenoteenv{table}
+
+\usepackage{amsmath}   % <-- for \eqref
+
+\usepackage{pgfgantt}
+
