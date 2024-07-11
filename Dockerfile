@@ -80,6 +80,10 @@ RUN tlmgr install mdwtools
 # equation
 RUN tlmgr install amsmath
 
+# pgfgantt
+# https://tex.stackexchange.com/a/63915
+RUN tlmgr install pgfgantt
+
 RUN tlmgr install pdfpages
 
 ENTRYPOINT ["pdflatex"]
