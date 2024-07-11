@@ -84,4 +84,6 @@ RUN tlmgr install amsmath
 # https://tex.stackexchange.com/a/63915
 RUN tlmgr install pgfgantt
 
+RUN tlmgr install pdfpages
+
 ENTRYPOINT ["pdflatex"]
