@@ -86,4 +86,6 @@ RUN tlmgr install pgfgantt
 
 RUN tlmgr install pdfpages
 
+RUN tlmgr install xcolor
+
 ENTRYPOINT ["pdflatex"]
