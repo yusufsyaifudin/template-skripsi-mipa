@@ -88,4 +88,9 @@ RUN tlmgr install pdfpages
 
 RUN tlmgr install xcolor
 
+# For rotation
+RUN tlmgr install adjustbox
+RUN tlmgr install collectbox
+RUN tlmgr install ucs
+
 ENTRYPOINT ["pdflatex"]
