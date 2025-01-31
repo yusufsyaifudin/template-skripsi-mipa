@@ -93,4 +93,7 @@ RUN tlmgr install adjustbox
 RUN tlmgr install collectbox
 RUN tlmgr install ucs
 
+# For package CJKutf8 (Chinese character)
+RUN tlmgr install cjk
+
 ENTRYPOINT ["pdflatex"]
