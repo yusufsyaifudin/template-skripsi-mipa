@@ -96,4 +96,5 @@ RUN tlmgr install ucs
 # For package CJKutf8 (Chinese character)
 RUN tlmgr install cjk
 
-ENTRYPOINT ["pdflatex"]
+# Set entry point to use lualatex instead of pdflatex
+ENTRYPOINT ["lualatex"]
