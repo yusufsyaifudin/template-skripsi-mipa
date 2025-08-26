@@ -96,6 +96,6 @@ RUN tlmgr install ucs
 
 # To arrange three pictures in a single row with three columns in LaTeX, you can use the subfigure package from the subcaption bundle. This approach is highly recommended as it provides excellent control over captions and spacing.
 # https://ctan.org/pkg/subcaption The package is distributed with caption.
-RUN tlmgr install caption subcaption
+RUN tlmgr install caption
 
 ENTRYPOINT ["pdflatex"]
