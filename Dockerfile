@@ -32,7 +32,7 @@
 # * http://johnbokma.com/blog/2021/06/18/running-pdflatex-using-alpine-pandoc-latex-image.html
 # * https://stackoverflow.com/questions/55312675/docker-alpine-texlive-error-tlmgr-not-found
 # Use ubuntu because Alpine image for this version not support ARM architecture
-FROM pandoc/latex:3.7.0.2-ubuntu
+FROM pandoc/latex:3.7.0.2-alpine
 
 RUN tlmgr update --self && tlmgr install sectsty lastpage helvetic
 
@@ -97,5 +97,6 @@ RUN tlmgr install ucs
 # To arrange three pictures in a single row with three columns in LaTeX, you can use the subfigure package from the subcaption bundle. This approach is highly recommended as it provides excellent control over captions and spacing.
 # https://ctan.org/pkg/subcaption The package is distributed with caption.
 RUN tlmgr install caption
+RUN tlmgr install ulem
 
 ENTRYPOINT ["pdflatex"]
