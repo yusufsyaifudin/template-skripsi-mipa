@@ -22,11 +22,10 @@ jobs:
             ghcr.io/yusufsyaifudin/template-skripsi-mipa
           # generate Docker tags based on the following events/attributes
           tags: |
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
             type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=ref,event=tag
+            type=sha
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
