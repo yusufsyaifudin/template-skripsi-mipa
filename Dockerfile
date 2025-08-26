@@ -31,7 +31,8 @@
 # Reference: 
 # * http://johnbokma.com/blog/2021/06/18/running-pdflatex-using-alpine-pandoc-latex-image.html
 # * https://stackoverflow.com/questions/55312675/docker-alpine-texlive-error-tlmgr-not-found
-FROM pandoc/latex:3.7.0.2-alpine
+# Use ubuntu because Alpine image for this version not support ARM architecture
+FROM pandoc/latex:3.7.0.2-ubuntu
 
 RUN tlmgr update --self && tlmgr install sectsty lastpage helvetic
 
