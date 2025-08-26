@@ -32,71 +32,48 @@
 # * http://johnbokma.com/blog/2021/06/18/running-pdflatex-using-alpine-pandoc-latex-image.html
 # * https://stackoverflow.com/questions/55312675/docker-alpine-texlive-error-tlmgr-not-found
 # Use ubuntu because Alpine image for this version not support ARM architecture
-FROM pandoc/latex:3.7.0.2-alpine
+FROM pandoc/latex:3.7.0.2-ubuntu
 
-RUN tlmgr update --self && tlmgr install sectsty lastpage helvetic
+RUN apt update && \
+    apt upgrade -y && \
+    apt install texlive-latex-extra
 
 # https://github.com/latex3/babel/blob/v.3.92/locale/id/babel-indonesian.tex
-RUN tlmgr install babel-english babel-indonesian
-
 # https://www.ctan.org/pkg/nomencl
-RUN tlmgr install nomencl
-
 # https://www.ctan.org/pkg/tocbasic (tocbasic)
-RUN tlmgr install koma-script
-
 # https://www.ctan.org/pkg/pbox
-RUN tlmgr install pbox
-
 # https://www.ctan.org/pkg/enumitem
-RUN tlmgr install enumitem
-
 # https://www.ctan.org/pkg/bera (beramono)
-RUN tlmgr install bera
-
 # https://www.ctan.org/pkg/tocloft
-RUN tlmgr install tocloft
-
 # https://tex.stackexchange.com/questions/155309/mktextfm-ptmr8t-errors
-# Fix this error:
-# ! I can't find file `ptmr8t'.
-RUN tlmgr install collection-fontsrecommended
-
-# https://www.ctan.org/pkg/natbib
-# For bibliography
-RUN tlmgr install natbib
-
+# https://www.ctan.org/pkg/natbib For bibliography
 # For longtable support https://tex.stackexchange.com/questions/639452/create-long-table-in-latex
 # https://github.com/lvjr/tabularray
 # need ninecolors
-RUN tlmgr install tabularray
-RUN tlmgr install varwidth
-RUN tlmgr install ninecolors
-RUN tlmgr install tablefootnote
-RUN tlmgr install xifthen
-
 # footnote: https://ctan.org/pkg/footnote
-RUN tlmgr install mdwtools
-
 # equation
-RUN tlmgr install amsmath
-
-# pgfgantt
-# https://tex.stackexchange.com/a/63915
-RUN tlmgr install pgfgantt
-
-RUN tlmgr install pdfpages
-
-RUN tlmgr install xcolor
-
-# For rotation
-RUN tlmgr install adjustbox
-RUN tlmgr install collectbox
-RUN tlmgr install ucs
-
+# pgfgantt https://tex.stackexchange.com/a/63915
+# For rotation: adjustbox collectbox ucs
 # To arrange three pictures in a single row with three columns in LaTeX, you can use the subfigure package from the subcaption bundle. This approach is highly recommended as it provides excellent control over captions and spacing.
 # https://ctan.org/pkg/subcaption The package is distributed with caption.
-RUN tlmgr install caption
-RUN tlmgr install ulem
+RUN tlmgr update --self && \
+    tlmgr install sectsty lastpage helvetic \
+    babel-english babel-indonesian \
+    nomencl \
+    koma-script \
+    pbox \
+    enumitem \
+    bera \
+    tocloft \
+    collection-fontsrecommended \
+    natbib \
+    tabularray varwidth ninecolors tablefootnote xifthen \
+    mdwtools \
+    amsmath \
+    pgfgantt \
+    pdfpages \
+    xcolor \
+    adjustbox collectbox ucs \
+    caption ulem pdflscape
 
 ENTRYPOINT ["pdflatex"]
