@@ -36,7 +36,7 @@ FROM pandoc/latex:3.7.0.2-ubuntu
 
 RUN apt update && \
     apt upgrade -y && \
-    apt install texlive-latex-extra
+    apt install -y texlive-latex-extra
 
 # https://github.com/latex3/babel/blob/v.3.92/locale/id/babel-indonesian.tex
 # https://www.ctan.org/pkg/nomencl
