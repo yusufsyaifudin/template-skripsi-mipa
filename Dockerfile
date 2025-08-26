@@ -32,11 +32,7 @@
 # * http://johnbokma.com/blog/2021/06/18/running-pdflatex-using-alpine-pandoc-latex-image.html
 # * https://stackoverflow.com/questions/55312675/docker-alpine-texlive-error-tlmgr-not-found
 # Use ubuntu because Alpine image for this version not support ARM architecture
-FROM pandoc/latex:3.7.0.2-ubuntu
-
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y texlive-latex-extra
+FROM pandoc/latex:3.7.0.2-alpine
 
 # https://github.com/latex3/babel/blob/v.3.92/locale/id/babel-indonesian.tex
 # https://www.ctan.org/pkg/nomencl
