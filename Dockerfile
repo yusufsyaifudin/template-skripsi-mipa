@@ -70,6 +70,7 @@ RUN tlmgr update --self && \
     pdfpages \
     xcolor \
     adjustbox collectbox ucs \
-    caption ulem pdflscape
+    caption ulem pdflscape \
+    tcolorbox
 
 ENTRYPOINT ["pdflatex"]
