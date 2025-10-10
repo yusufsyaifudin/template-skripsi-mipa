@@ -71,6 +71,7 @@ RUN tlmgr update --self && \
     xcolor \
     adjustbox collectbox ucs \
     caption ulem pdflscape \
-    tcolorbox
+    tcolorbox \
+    tikzfill
 
 ENTRYPOINT ["pdflatex"]
