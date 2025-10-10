@@ -72,6 +72,7 @@ RUN tlmgr update --self && \
     adjustbox collectbox ucs \
     caption ulem pdflscape \
     tcolorbox \
-    tikzfill
+    tikzfill \
+    fontawesome
 
 ENTRYPOINT ["pdflatex"]
