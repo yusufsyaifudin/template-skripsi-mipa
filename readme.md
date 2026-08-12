@@ -1,3 +1,5 @@
+
+
 # Template Skripsi MIPA
 
 Dengan pengubahan dari [https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf](https://luk.staff.ugm.ac.id/riset/panduan/fmipa/PanduanPenulisan.pdf)
@@ -12,8 +14,8 @@ Saya menggunakan beberapa package berikut:
 1. Silahkan download atau clone repo ini `git clone https://github.com/yusufsyaifudin/template-skripsi-mipa.git`
 2. Isi data awal di `CONFIG.tex`
 3. Untuk pengaturan format proposal atau tugas akhir, ubah pada bagian`\ExecuteOptions` pada file `ugmskripsi.cls`. Gunakan parameter pertama "proposal" untuk format penulisan proposal, dan "skripsi" untuk penulisan Skripsi.
-3. Silahkan edit tulisan untuk setiap bab.
-4. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
+4. Silahkan edit tulisan untuk setiap bab.
+5. Setelah itu, buka file `LAPORAN_SKRIPSI.tex` di TexMaker lalu coba compile. Akan ada file `LAPORAN_SKRIPSI.pdf`.
 
 ## Menggunakan Docker
 
@@ -57,4 +59,3 @@ Jika menggunakan Visual Studio Code, kamu bisa menggunakan command `F5` atau `fn
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. You just DO WHAT THE FUCK YOU WANT TO.
-
