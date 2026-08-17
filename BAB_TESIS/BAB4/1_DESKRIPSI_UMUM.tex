@@ -1,0 +1,51 @@
+Gambar~\ref{fig:seq-diagram-mermaid} merupakan diagram alur proses dari sistem \textit{retrieval-augmented generation} (RAG) yang asli.
+
+\begin{figure}[H]
+\begin{mermaid}
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#ffffff',
+    'primaryBorderColor': '#000000',
+    'primaryTextColor': '#000000',
+    'lineColor': '#000000',
+    'textColor': '#000000',
+    'clusterBkg': '#ffffff',
+    'clusterBorderColor': '#000000',
+    'fontSize': '11px',
+    'fontFamily': 'Times New Roman, Times, serif'
+  },
+  'flowchart': {
+    'curve': 'linear',
+    'nodeSpacing': 40,
+    'rankSpacing': 40,
+    'padding': 12
+  }
+}}%%
+graph TD
+    classDef formal fill:#ffffff,stroke:#000000,stroke-width:1.5px;
+
+    NodeStart(["Mulai: Input Pertanyaan <code>x</code>"]):::formal --> ProcInput["Enkode Pertanyaan <code>x</code>"]:::formal
+
+    subgraph Sub_Retrieval ["TAHAP 1: RETRIEVAL (DPR)"]
+        ProcInput --> RetData["Cari Chunks Relevan"]:::formal
+        WikiIndex[("Indeks Wikipedia:<br/>21M Chunks 100-Kata")]:::formal
+        RetTopK["Ambil Top-K Chunks <code>z</code>"]:::formal
+        
+        WikiIndex -.->|Pencarian MIPS| RetData
+        RetData --> RetTopK
+    end
+
+    RetTopK --> ProcContext
+
+    subgraph Sub_Generation ["TAHAP 2: GENERATION (BART)"]
+        ProcContext["Gabungkan Pertanyaan <code>x</code><br/>+ Chunks <code>z</code>"]:::formal --> ModelBART["Generate Jawaban <code>y</code>"]:::formal
+        ParamMem[("Memori Model:<br/>BART-large 400M")]:::formal
+        ParamMem -.->|Pre-trained Weights| ModelBART
+    end
+
+    ModelBART --> NodeEnd(["Selesai: Output Jawaban <code>y</code>"]):::formal
+\end{mermaid}
+\caption{Sequence diagram (numbering, asynchronous arrows, multiple participants)}
+\label{fig:seq-diagram-mermaid}
+\end{figure}
